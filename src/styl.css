@@ -1,0 +1,96 @@
+/* Czaty — gomuks web przemalowany na własny styl (czerń + złoto).
+   `html:root` przebija zmienne gomuksa z `:root` (także te z trybu ciemnego). */
+html:root {
+	color-scheme: dark;
+	--font-stack: "Noto Sans", "Segoe UI", Arial, sans-serif;
+	--letter-spacing: 0;
+	--font-feature-settings: normal;
+	--monospace-font-stack: ui-monospace, "JetBrains Mono", monospace;
+
+	--zloto: #d4af37;
+	--zloto-ciemne: #a8862a;
+
+	--background-color: #171717;
+	--login-background-color: #111111;
+	--text-color: #ececec;
+	--secondary-text-color: #9a9a9a;
+	--semisecondary-text-color: #b8b8b8;
+	--link-text-color: var(--zloto);
+	--visited-link-text-color: var(--zloto-ciemne);
+
+	--primary-color: var(--zloto);
+	--primary-color-dark: var(--zloto-ciemne);
+	--error-text-color: #fca5a5;
+
+	--border-color: #2a2a2a;
+	--pill-background-color: #262626;
+	--disabled-input-background-color: #1f1f1f;
+	--url-preview-background-color: #1f1f1f;
+	--code-background-color: #262626;
+	--button-hover-color: rgba(212, 175, 55, .18);
+	--light-hover-color: rgba(255, 255, 255, .06);
+	--own-reaction-background-color: rgba(212, 175, 55, .15);
+	--own-reaction-hover-color: rgba(212, 175, 55, .35);
+	--own-reaction-border-color: var(--zloto);
+
+	--composer-background-color: #1f1f1f;
+
+	--timeline-hover-bg-color: #1c1c1c;
+	--timeline-highlight-bg-color: rgba(212, 175, 55, .10);
+	--timeline-highlight-hover-bg-color: rgba(212, 175, 55, .16);
+	--timeline-jump-bg-color: rgba(212, 175, 55, .22);
+	--timeline-jump-hover-bg-color: rgba(212, 175, 55, .28);
+
+	--room-list-background: #111111;
+	--room-list-background-overlay: transparent;
+	--room-list-search-background-overlay: transparent;
+	--space-list-background-overlay: #0c0c0c;
+	--room-list-scrollbar-color: #3a3a3a transparent;
+	--room-list-entry-hover-color: #1e1e1e;
+	--room-list-entry-selected-color: #262626;
+
+	--dimmed-overlay-background-color: rgba(0, 0, 0, .8);
+	--modal-box-shadow-color: rgba(0, 0, 0, .6);
+	--popout-widget-box-shadow-color: rgba(0, 0, 0, .7);
+
+	--emoji-selected-border-color: var(--zloto);
+	--image-pack-editor-selected-color: rgba(212, 175, 55, .3);
+
+	--unread-counter-text-color: #111111;
+	--unread-counter-message-bg: #6b6b6b;
+	--unread-counter-notification-bg: var(--zloto);
+	--unread-counter-marked-unread-bg: var(--zloto);
+	--unread-counter-highlight-bg: #ef4444;
+	--space-unread-counter-message-bg: #6b6b6b;
+	--space-unread-counter-notification-bg: var(--zloto);
+	--space-unread-counter-highlight-bg: #ef4444;
+
+	--sent-ok-color: #3a3a3a;
+	--blockquote-border-color: var(--zloto-ciemne);
+	--clickable-cursor: pointer;
+}
+
+html, body { background: #171717; }
+
+/* Złoty akcent na aktywnej rozmowie i polu pisania */
+:focus-visible { outline-color: var(--zloto); }
+textarea:focus, input:focus { border-color: var(--zloto) !important; }
+::selection { background: rgba(212, 175, 55, .35); }
+
+/* Paski przewijania jak w Agentach */
+* { scrollbar-width: thin; scrollbar-color: #2a2a2a transparent; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3a3a3a; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Czcionki 1:1 jak w innych moich aplikacjach: Noto Sans 14 px (gomuks: Inter 16 px; rem skaluje całość) */
+html { font-size: 14px !important; }
+body, button, input, textarea, select {
+	font-family: "Noto Sans", "Segoe UI", Arial, sans-serif !important;
+	letter-spacing: 0 !important;
+	font-feature-settings: normal !important;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: subpixel-antialiased;
+}
+code, pre, kbd { font-family: ui-monospace, "JetBrains Mono", monospace !important; }

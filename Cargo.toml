@@ -1,0 +1,18 @@
+[package]
+name = "czaty-okno"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "czaty-okno"
+path = "src/main.rs"
+
+[dependencies]
+gtk = "0.18"
+webkit2gtk = { version = "2.0", features = ["v2_40"] }
+ksni = "0.3"
+javascriptcore = { package = "javascriptcore-rs", version = "1.1" }
+tokio = { version = "1", features = ["rt", "macros", "time"] }
+
+[profile.release]
+opt-level = 2
